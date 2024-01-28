@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jfrasinska/goit-nodejs-hw-01/issues"
   },
-  "homepage": "https://github.com/jfrasinska/goit-nodejs-hw-01#readme"
+  "homepage": "https://github.com/jfrasinska/goit-nodejs-hw-01#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
 }
