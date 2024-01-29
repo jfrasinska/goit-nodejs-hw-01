@@ -60,4 +60,42 @@ async function addContact(name, email, phone) {
   }
 }
 
-module.exports = { listContacts, getContactById, removeContact, addContact };
+async function invokeAction({ action, id, name, email, phone }) {
+  try {
+    switch (action) {
+      case "list":
+        const allContacts = await listContacts();
+        console.table(allContacts);
+        return allContacts;
+
+      case "get":
+        const contactById = await getContactById(id);
+        console.log("Contact by ID:", contactById);
+        return contactById;
+
+      case "add":
+        const newContact = await addContact(name, email, phone);
+        console.log("New Contact Added:", newContact);
+        return newContact;
+
+      case "remove":
+        const isRemoved = await removeContact(id);
+        console.log(`Contact with ID ${id} removed:`, isRemoved);
+        return isRemoved;
+
+      default:
+        console.warn("\x1B[31m Unknown action type!");
+    }
+  } catch (error) {
+    console.error("Error:", error.message);
+    throw error;
+  }
+}
+
+module.exports = {
+  listContacts,
+  getContactById,
+  removeContact,
+  addContact,
+  invokeAction,
+};

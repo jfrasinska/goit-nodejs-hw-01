@@ -1,29 +1,17 @@
-const contactsModule = require("./contacts");
+const { Command } = require("commander");
+const program = new Command();
 
-async function testContactFunctions() {
-  try {
-    const allContacts = await contactsModule.listContacts();
-    console.log("All Contacts:", allContacts);
+program
+  .option("-a, --action <type>", "choose action")
+  .option("-i, --id <type>", "user id")
+  .option("-n, --name <type>", "user name")
+  .option("-e, --email <type>", "user email")
+  .option("-p, --phone <type>", "user phone");
 
-    const contactById = await contactsModule.getContactById(1);
-    console.log("Contact by ID:", contactById);
+program.parse(process.argv);
 
-    const contactToRemoveId = 1;
-    const isRemoved = await contactsModule.removeContact(contactToRemoveId);
-    console.log(`Contact with ID ${contactToRemoveId} removed:`, isRemoved);
+const options = program.opts();
 
-    const newContact = await contactsModule.addContact(
-      "John Doe",
-      "john@example.com",
-      "123-456-7890"
-    );
-    console.log("New Contact Added:", newContact);
+const { invokeAction } = require("./contacts");
 
-    const updatedContacts = await contactsModule.listContacts();
-    console.log("Updated Contacts:", updatedContacts);
-  } catch (error) {
-    console.error("Error:", error.message);
-  }
-}
-
-testContactFunctions();
+invokeAction(options);
