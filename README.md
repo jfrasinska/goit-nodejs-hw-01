@@ -4,15 +4,15 @@ Simple CLI application to manage a contact list.
 
 1. **List of all contacts:**
 
-   - ![Screenshot List](https://monosnap.com/file/xRM8SGqGsemdDkyyzrLjfT9JsLXRBF)
+   - ![Screenshot List](https://i.ibb.co/y6bRYYB/list.png)
 
 2. **Get contact by ID:**
 
-   - ![Screenshot Get](https://monosnap.com/file/C4Qu75E2Xi2p5VWX0azsGWeY1L9vFD)
+   - ![Screenshot Get](https://i.ibb.co/3d3sLfd/get.png)
 
 3. **Add new contact:**
 
-   - ![Screenshot Add](https://monosnap.com/file/UklJIBITZnTGW8Mf4JdbBhh8pHneoj)
+   - ![Screenshot Add](https://i.ibb.co/6NrMs0g/add.png)
 
 4. **Remove contact:**
-   - ![Screenshot Remove](https://monosnap.com/file/fnaDGJ7qM8pqDNatojbyXB2araj3ah)
+   - ![Screenshot Remove](https://i.ibb.co/cTL5TQk/remove.png)
